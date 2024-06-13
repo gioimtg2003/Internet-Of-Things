@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+    rabbitMQ:
+        image: rabbitmq:3-management
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+            - "1883:1883"
+            - "1885:15675"
+        environment:
+            RABBITMQ_DEFAULT_USER: "iot"
+            RABBITMQ_DEFAULT_PASS: "iotNhom8"
+        command: '/bin/bash -c "rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_amqp1_0; rabbitmq-server"'
