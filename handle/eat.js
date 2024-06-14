@@ -10,4 +10,5 @@ const eatSchema = new mongoose.Schema({
     }
 });
 
-const Eat = mongoose.model('eats', eatSchema);
+module.exports = mongoose.model('eats', eatSchema);
+
