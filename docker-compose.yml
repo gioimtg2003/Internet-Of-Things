@@ -3,10 +3,10 @@ services:
     rabbitMQ:
         image: rabbitmq:3-management
         ports:
-            - "5672:5672"
-            - "15672:15672"
+            # - "5672:5672"
+            - "8080:15672"
+            # - "1885:15675"
             - "1883:1883"
-            - "1885:15675"
         environment:
             RABBITMQ_DEFAULT_USER: "iot"
             RABBITMQ_DEFAULT_PASS: "iotNhom8"
