@@ -7,7 +7,7 @@ const client = mqtt.connect("mqtt://192.168.137.1", {
     password: 'iotNhom8',
     port: 1883
 });
-eat = true;
+let eat = true;
 
 client.on("connect", () => {
     client.subscribe("eat", (err) => {

@@ -6,7 +6,7 @@ const http = require("http").createServer(app);
 const mongoose = require('mongoose');
 const eatSchema = require("./eat");
 
-const client = mqtt.connect("mqtt://192.168.137.1", {
+const client = mqtt.connect("mqtt://18.141.232.73", {
     username: 'iot',
     password: 'iotNhom8',
     port: 1883
@@ -20,6 +20,15 @@ mongoose.connect(process.env.MONGO_URI, {
     throw new Error(err);
 
 });
+//config cors
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -92,7 +101,7 @@ app.post("/eat", (req, res) => {
     }
 
 });
-http.listen(3000, () => {
+http.listen(3001, () => {
     console.log("Server is running on port 3000");
 });
 
