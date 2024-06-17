@@ -101,7 +101,7 @@ app.post("/eat", (req, res) => {
     }
 
 });
-http.listen(3001, () => {
+http.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
 
