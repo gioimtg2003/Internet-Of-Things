@@ -15,7 +15,7 @@ services:
         depends_on:
             - rabbitMQ
         build:
-            context: ./meomeo
+            context: ./react
             dockerfile: Dockerfile
         ports:
             - "80:80"

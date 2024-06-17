@@ -6,7 +6,7 @@ const http = require("http").createServer(app);
 const mongoose = require('mongoose');
 const eatSchema = require("./eat");
 
-const client = mqtt.connect("mqtt://18.141.232.73", {
+const client = mqtt.connect("mqtt://13.229.236.11", {
     username: 'iot',
     password: 'iotNhom8',
     port: 1883
