@@ -11,3 +11,11 @@ services:
             RABBITMQ_DEFAULT_USER: "iot"
             RABBITMQ_DEFAULT_PASS: "iotNhom8"
         command: '/bin/bash -c "rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_amqp1_0; rabbitmq-server"'
+    reactjs:
+        depends_on:
+            - rabbitMQ
+        build:
+            context: ./meomeo
+            dockerfile: Dockerfile
+        ports:
+            - "80:80"
